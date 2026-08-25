@@ -1,43 +1,118 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artwork</title>
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  <style>
+    :root{
+      --bg: white;
+      --accent: #ff8cc4;
+      --text: #111;
+      --muted: #333;
+      --container-max: 900px;
+      --space-xxs: 0.25rem;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --radius: 8px;
+    }
+    
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    .container{
+      max-width:var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md);
+      width:100%;
+    }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    .topnav{
+      display:flex;
+      gap: .5rem;
+      justify-content:center; /* center nav */
+      background:#333;
+      padding: .25rem .5rem;
+    }
+    .topnav a{
+      color:#f2f2f2;
+      text-decoration:none;
+      padding: .6rem 1rem;
+      border-radius:6px;
+      font-size:1rem;
+    }
+    .topnav a:hover{ background:#ddd; color:#000; }
+    .topnav a.active{ background:var(--accent); color:#fff; }
 
-.topnav a.active {
-  background-color: #FF8CC4;
-  color: pink;
-}
-</style>
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .hero img{
+      width:100%;
+      max-width:400px;
+      height:auto;
+      display:block;
+      border-radius:6px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    h1{
+      margin: 0;
+      color:pink;
+      font-size:2rem;
+    }
+    p{ margin: .6rem 0; text-align:center; }
+
+    a { color: #000; text-decoration:none; }
+    a:hover { color:#fff; }
+
+    footer{
+      margin-top:auto;
+      padding: var(--space-sm) var(--space-md);
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+    }
+    .social a{ color:#fff; font-size:1.4rem; text-decoration:none; }
+
+    @media (min-width:760px){
+      .hero{
+        flex-direction:row;
+        align-items:flex-start;
+        gap:var(--space-lg);
+        text-align:left;
+      }
+      .intro{ flex:1; }
+      p { text-align:left; }
+      .topnav{ justify-content:flex-start; padding: .5rem var(--space-md); }
+      .container{ padding: var(--space-lg); }
+    }
+  </style>
 </head>
 <body>
-
-<div class="topnav">
- <a class="active" href="artwork.html">Artwork</a>  
-  <a href="index.html">Home</a>
-</div>
-
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="active" href="artwork.html">Artwork</a>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 <div style="padding-left:16px">
 <h1 style="color:pink;">Ajuri</h1><h1 style="color:pink;">Artwork</h1>
   <a href="lucky.html">
@@ -58,5 +133,6 @@ Sausages?"/Source of Income</p>
   <a href="whine.html">
 <img src="IMG_5727.jpeg" alt="Whine" width="200px" height="300px">
   </a> 
-<p>Getting Under to Get Over/Whine</p></body>
+<p>Getting Under to Get Over/Whine</p>
+</body>
 </html>
