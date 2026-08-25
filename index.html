@@ -1,113 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: auto;
-  min-width:100vw;
-  width: auto;
-}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajuri</title>
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #FF8CC4;
-  color: pink;
-}
-</style>
-</head>
-<body style="background-color:hotpink;">
-  <body>
-
-<div class="topnav">
-    <a class="active" href="index.html">Home</a> 
-  <a href="artwork.html">Artwork</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div style="padding-left:16px">
-<h1 style="color:pink;">Ajuri</h1>
-<p>Jaa bee ɔdɔi jaa?</p>
-<p>Welcome/Bienvenue/Bem Vindo.</p>
-</div>
-<style>
-a:link {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:visited {
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:hover {
-  color: white;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:active {
-  color: hotpink;
-  background-color: transparent;
-  text-decoration: none;
-}
-</style>   
   <style>
-    p {text-align: center;} 
-    img {
-  display: block;
-  margin: auto;
-}  
-  
-</style>
-  <img src= "IMG_5850.jpeg"alt="Hannah" width="400px" height="200px" margin: auto>
-  <p> An artist based in London, primarily working in Acrylic.</p>
-  <p>I count Tam Joseph, Tracey Emin, Chris Ofili, Kerry James Marshall, and <br>
-    Lynette Yiadom-Boakye amongst my inspirations</p>
-  <p>I tend to draw inspiration from photography and other forms of visual <br>
-    media. Some of these include Carrie Mae Weams' Kitchen Table series, <br>
-    <a href="https://www.instagram.com/p/DR25CbNkRtZ/?hl=&img_index=9"> Rafael Pereira</a>, <br>
-    Catrien Ariëns work in Curaçao, and Sophie Muller's music video work.</p>
-  <p>Currently Working on: A Manifesto</p>
-  <p>Listen to: Love Theme From Spartacus x Yusuf Lateef</p>
-  <p>Find more of my work <a href="artwork.html"> here </a></p>
-  </body>   
-     <footer>
-      <style>
-      footer {
-        display: block;
-}
-</style> 
-   <script src="https://kit.fontawesome.com/c833f0da0a.js" crossorigin="anonymous"></script>
-   </footer>  
-<body>      
-  <a href="https://www.tiktok.com/@han.ydx?_r=1&_t=ZN-99BNUT0xSCs"> <i class="fa-brands fa-tiktok" style="color: rgb(255, 255, 255);"></i> </a>
-  <a href="https://uk.pinterest.com/hannahhidiab/?actingBusinessId=711639316027377527"> <i class="fa-brands fa-pinterest" style="color: rgb(255, 255, 255);"></i> </a>
-  <a href="https://www.youtube.com/@Ajuriartco"> <i class="fa-brands fa-youtube" style="color: rgb(255, 255, 255);"> </i></a> 
+    :root{
+      --bg: hotpink;
+      --accent: #ff8cc4;
+      --text: #111;
+      --muted: #333;
+      --container-max: 900px;
+      --space-xxs: 0.25rem;
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --radius: 8px;
+    }
+
+    /* Basic reset + sizing */
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing:antialiased;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    /* Page container */
+    .container{
+      max-width:var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md);
+      width:100%;
+    }
+
+    /* Top navigation */
+    .topnav{
+      display:flex;
+      gap: .5rem;
+      justify-content:center; /* center nav */
+      background:#333;
+      padding: .25rem .5rem;
+    }
+    .topnav a{
+      color:#f2f2f2;
+      text-decoration:none;
+      padding: .6rem 1rem;
+      border-radius:6px;
+      font-size:1rem;
+    }
+    .topnav a:hover{ background:#ddd; color:#000; }
+    .topnav a.active{ background:var(--accent); color:#fff; }
+
+    /* Hero area: image + intro */
+    .hero{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    .hero img{
+      width:100%;
+      max-width:400px;
+      height:auto;
+      display:block;
+      border-radius:6px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    h1{
+      margin: 0;
+      color:pink;
+      font-size:2rem;
+    }
+    p{ margin: .6rem 0; text-align:center; }
+
+    /* Links */
+    a { color: #000; text-decoration:none; }
+    a:hover { color:#fff; }
+
+    /* Social row/footer */
+    footer{
+      margin-top:auto;
+      padding: var(--space-sm) var(--space-md);
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+    }
+    .social a{ color:#fff; font-size:1.4rem; text-decoration:none; }
+
+    /* Larger screens: side-by-side hero */
+    @media (min-width:760px){
+      .hero{
+        flex-direction:row;
+        align-items:flex-start;
+        gap:var(--space-lg);
+        text-align:left;
+      }
+      .intro{ flex:1; }
+      p { text-align:left; }
+      .topnav{ justify-content:flex-start; padding: .5rem var(--space-md); }
+      .container{ padding: var(--space-lg); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="topnav" aria-label="Main navigation">
+    <a class="active" href="index.html">Home</a>
+    <a href="artwork.html">Artwork</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main class="container">
+    <section class="hero" aria-labelledby="site-title">
+      <img src="IMG_5850.jpeg" alt="Hannah" />
+      <div class="intro">
+        <h1 id="site-title">Ajuri</h1>
+        <p>Jaa bee ɔdɔi jaa?</p>
+        <p>Welcome / Bienvenue / Bem Vindo.</p>
+
+        <p>An artist based in London, primarily working in acrylic. I count Tam Joseph, Tracey Emin, Chris Ofili, Kerry James Marshall, and Lynette Yiadom-Boakye among my inspirations.</p>
+
+        <p>I draw inspiration from photography and visual media — some references include Carrie Mae Weems' Kitchen Table series, Rafael Pereira, Catrien Ariëns, and Sophie Muller's music video work.</p>
+
+        <p>Currently working on: A Manifesto</p>
+        <p>Listen to: Love Theme From Spartacus x Yusuf Lateef</p>
+        <p>Find more of my work <a href="artwork.html">here</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.tiktok.com/@han.ydx?_r=1&_t=ZN-99BNUT0xSCs" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://uk.pinterest.com/hannahhidiab/?actingBusinessId=711639316027377527" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+      <a href="https://www.youtube.com/@Ajuriartco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/c833f0da0a.js" crossorigin="anonymous"></script>
 </body>
 </html>
