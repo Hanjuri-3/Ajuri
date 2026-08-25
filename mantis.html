@@ -125,10 +125,19 @@
     }
 
     /* Carousel */
+    /* Match lucky.html: rounded corners and drop shadow */
     .carousel-inner {
       border-radius: 6px;
       overflow: hidden;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Ensure slide images inherit the rounded corners (helps across browsers) */
+    .carousel .item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
     }
     
     .carousel-control {
